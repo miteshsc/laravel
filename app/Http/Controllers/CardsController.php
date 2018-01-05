@@ -18,4 +18,12 @@ class CardsController extends Controller
 
     	return view('cards.show', compact('card'));
     }
+
+    public function create(Request $request){
+
+		$card = new Card();
+		$card->add(['title' => $request->title]);
+
+		return back();    	
+    }
 }

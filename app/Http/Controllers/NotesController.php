@@ -33,6 +33,4 @@ class NotesController extends Controller
    	//$card->notes()->create($request->all());
    	return back();
    }
-
-
 }
