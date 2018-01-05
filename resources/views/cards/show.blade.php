@@ -18,7 +18,7 @@
 		<form method="POST" action="/cards/{{ $card->id }}/notes">
 			{!! csrf_field() !!}
 			<div class="form-group">
-				<textarea name="body" class="form-control"></textarea>
+				<textarea name="body" class="form-control">{{ old('body')}}</textarea>
 			</div>
 
 			<div class="form-group">
@@ -27,5 +27,14 @@
 
 		</form>
 	</div>
+	<div class="col-md-6 col-md-offset-3">
+			@if (count($errors) > 0)
+				<ul>
+				@foreach($errors->all() as $error)	
+					<li>{{ $error }} </li>
+				@endforeach
+				<ul>
+			@endif
+		</div>
 </div>
 @stop

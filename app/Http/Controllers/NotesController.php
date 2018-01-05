@@ -8,7 +8,8 @@ use App\Card;
 use App\Note;
 
 class NotesController extends Controller
-{
+{	
+
    public function store(Request $request, Card $card)
    {   
 
@@ -28,6 +29,9 @@ class NotesController extends Controller
 		new Note(['body' => $request->body])
    	);
    	*/
+	$this->validate($request, 
+   			['body' => ['required', 'min:10']
+   	]);
 
    	$card->addNote(new Note($request->all()));
    	//$card->notes()->create($request->all());
@@ -42,7 +46,7 @@ class NotesController extends Controller
    }
 
    public function update(Request $request, Note $note)
-   {
+   {	   		
    		$note->update($request->all());
 
    		return back();
