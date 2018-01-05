@@ -27,8 +27,12 @@ Route::get('/page/about','PagesController@about');
 
 Route::get('/cards/index', 'CardsController@index');
 
-Route::get('/cards/{card}', 'CardsController@show');
+Route::get('cards/{card}', 'CardsController@show');
 
-Route::post('/cards/{card}/notes', 'NotesController@store');
+Route::post('cards/{card}/notes', 'NotesController@store');
 
-Route::post('/cards', 'CardsController@create');
+Route::post('cards', 'CardsController@create');
+
+Route::get('notes/{note}/edit', 'NotesController@edit');
+
+Route::put('notes/{note}', 'NotesController@update');

@@ -9,7 +9,9 @@
 
 		<ul class="list-group">
 			@foreach($card->notes as $note)
-				<li class="list-group-item">{{ $note->body }}</li>
+				<li class="list-group-item">{{ $note->body }}
+					<a style="float: right">{{ $note->user->username}}</a>
+				</li>
 			@endforeach
 		</ul>
 		<h3>Add a new note</h3>
