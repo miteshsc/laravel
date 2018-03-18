@@ -36,3 +36,7 @@ Route::post('cards', 'CardsController@create');
 Route::get('notes/{note}/edit', 'NotesController@edit');
 
 Route::put('notes/{note}', 'NotesController@update');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

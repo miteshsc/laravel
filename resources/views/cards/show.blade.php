@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.app')
 
 @section('content')
 
@@ -10,7 +10,7 @@
 		<ul class="list-group">
 			@foreach($card->notes as $note)
 				<li class="list-group-item">{{ $note->body }}
-					<a style="float: right">{{ $note->user->username}}</a>
+					<a style="float: right">{{ $note->user->name}}</a>
 				</li>
 			@endforeach
 		</ul>
